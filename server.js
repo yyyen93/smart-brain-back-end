@@ -19,6 +19,7 @@ const home  = require('./controllers/home');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
+const port = 'https://smartbrain-api-z43g.onrender.com';
 
 
 //Create app that running Express.
@@ -66,8 +67,8 @@ app.get('/profile/:id', (req,res) => { profile.handleProfileGet(req,res,knex)});
 app.put('/image', (req,res) => { image.handleImage(req,res,knex)});
 app.post('/imageurl', (req,res) => { image.handleApiCall(req,res)});
 
-app.listen(3000, ()=>{
-    console.log('App is running on port 3000');
+app.listen(port, ()=>{
+    console.log(`App is running on port ${port}`);
 })
 
 

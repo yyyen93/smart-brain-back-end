@@ -6,11 +6,11 @@ const cors = require('cors');
 const knex = require('knex')({
     client: 'pg',
     connection: {
-        host : 'dpg-cg3c9dt269v3bp9h1rng-a',
+        host : '127.0.0.1',
         port : 5432,
-        user : 'smartbrain_pzl8_user',
-        password : '9vKOZeh7HnsHcNQIfyhIMbPD00Fu8IXE',
-        database : 'smartbrain_pzl8'
+        user : 'postgres',
+        password : 'postgres',
+        database : 'smart-brain'
     }
 });
 const register = require('./controllers/register');
@@ -51,8 +51,8 @@ app.use(cors());
 
 
 //Create a root route.
-app.get('/', (req,res) => { home.handleHome(req,res,knex)});
-// app.get('/', (req,res) => res.send('success'));
+// app.get('/', (req,res) => { home.handleHome(req,res,knex)});
+app.get('/', (req,res) => res.send('success'));
 
 //Create a signin route. 
 app.post('/signin', (req,res) => { signin.handleSignin(req,res,knex,bcrypt)});

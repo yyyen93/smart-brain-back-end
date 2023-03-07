@@ -51,7 +51,8 @@ app.use(cors());
 
 
 //Create a root route.
-app.get('/', (req,res) => { home.handleHome(req,res,knex)});
+// app.get('/', (req,res) => { home.handleHome(req,res,knex)});
+app.get('/', (req,res) => res.send('success'));
 
 //Create a signin route. 
 app.post('/signin', (req,res) => { signin.handleSignin(req,res,knex,bcrypt)});

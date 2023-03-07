@@ -6,13 +6,23 @@ const cors = require('cors');
 const knex = require('knex')({
     client: 'pg',
     connection: {
-        host : '127.0.0.1',
+        host : 'dpg-cg3e1dd269v3bp9nej7g-a',
         port : 5432,
-        user : 'postgres',
-        password : 'postgres',
-        database : 'smart-brain'
+        user : 'smartbraindb_kvlp_user',
+        password : 'e7f51SFewGppAK5Mw3RPzuTxyAffXFKE',
+        database : 'smartbraindb_kvlp'
     }
 });
+// const knex = require('knex')({
+//     client: 'pg',
+//     connection: {
+//         host : '127.0.0.1',
+//         port : 5432,
+//         user : 'postgres',
+//         password : 'postgres',
+//         database : 'smart-brain'
+//     }
+// });
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const home  = require('./controllers/home');

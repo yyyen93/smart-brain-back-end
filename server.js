@@ -6,11 +6,11 @@ const cors = require('cors');
 const knex = require('knex')({
     client: 'pg',
     connection: {
-        host : 'dpg-cg3c9dt269v3bp9h1rng-a',
+        host : '127.0.0.1',
         port : 5432,
-        user : 'smartbrain_pzl8_user',
-        password : '9vKOZeh7HnsHcNQIfyhIMbPD00Fu8IXE',
-        database : 'smartbrain_pzl8'
+        user : 'postgres',
+        password : 'postgres',
+        database : 'smart-brain'
     }
 });
 const register = require('./controllers/register');
@@ -19,7 +19,6 @@ const home  = require('./controllers/home');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
-const port = 'https://smartbrain-api-z43g.onrender.com';
 
 
 //Create app that running Express.
@@ -67,8 +66,8 @@ app.get('/profile/:id', (req,res) => { profile.handleProfileGet(req,res,knex)});
 app.put('/image', (req,res) => { image.handleImage(req,res,knex)});
 app.post('/imageurl', (req,res) => { image.handleApiCall(req,res)});
 
-app.listen(port, ()=>{
-    console.log(`App is running on port ${port}`);
+app.listen(3000, ()=>{
+    console.log('App is running on port 3000');
 })
 
 

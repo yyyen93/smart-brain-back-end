@@ -6,11 +6,11 @@ const cors = require('cors');
 const knex = require('knex')({
     client: 'pg',
     connection: {
-        host : 'dpg-cg3e1dd269v3bp9nej7g-a',
+        host : 'dpg-cgc0mv1mbg55nqghsgq0-a',
         port : 5432,
-        user : 'smartbraindb_kvlp_user',
-        password : 'e7f51SFewGppAK5Mw3RPzuTxyAffXFKE',
-        database : 'smartbraindb_kvlp'
+        user : 'test_at71_user',
+        password : 'kVcdwRFTN7TnMNavrTy2SI5e6ovwG2fl',
+        database : 'test_at71'
     }
 });
 // const knex = require('knex')({
@@ -62,7 +62,7 @@ app.use(cors());
 
 //Create a root route.
 // app.get('/', (req,res) => { home.handleHome(req,res,knex)});
-app.get('/', (req,res) => res.send('success'));
+app.get('/', (req,res) => {home.handleHome(req,res,knex)});
 
 //Create a signin route. 
 app.post('/signin', (req,res) => { signin.handleSignin(req,res,knex,bcrypt)});
